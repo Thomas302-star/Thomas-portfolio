@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LazyMotion, domAnimation } from "motion/react";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
 import { PageTransition } from "@/components/ui/page-transition";
@@ -38,9 +39,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body id="top">
-        <SiteHeader />
-        <PageTransition>{children}</PageTransition>
-        <SiteFooter />
+        <LazyMotion features={domAnimation} strict>
+          <SiteHeader />
+          <PageTransition>{children}</PageTransition>
+          <SiteFooter />
+        </LazyMotion>
       </body>
     </html>
   );
