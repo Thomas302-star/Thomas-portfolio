@@ -16,7 +16,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   background: var(--background);
   overflow-x: hidden;
 }
@@ -75,10 +74,6 @@ select {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
