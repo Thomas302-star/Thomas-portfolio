@@ -3,18 +3,8 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay, ease: "easeOut" },
-  }),
-};
-
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
-  const reveal = shouldReduceMotion ? { opacity: 1, y: 0 } : "visible";
 
   return (
     <section className="relative isolate flex min-h-[calc(100svh-72px)] items-center overflow-hidden border-b border-white/10 px-5 pb-16 pt-24 sm:px-8 sm:pb-20 lg:px-12 lg:pt-28">
@@ -26,15 +16,30 @@ export function HeroSection() {
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end lg:gap-16">
           <div className="max-w-5xl">
-            <motion.p initial={shouldReduceMotion ? false : "hidden"} animate={reveal} variants={fadeUp} custom={0.05} className="mb-7 text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
+            <motion.p
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.05, ease: "easeOut" }}
+              className="mb-7 text-xs font-medium uppercase tracking-[0.24em] text-zinc-400"
+            >
               Web Developer · Thomas Fatade
             </motion.p>
 
-            <motion.h1 initial={shouldReduceMotion ? false : "hidden"} animate={reveal} variants={fadeUp} custom={0.15} className="font-display text-[clamp(3.5rem,9.5vw,9rem)] font-medium leading-[0.88] tracking-[-0.055em] text-white">
+            <motion.h1
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.15, ease: "easeOut" }}
+              className="font-display text-[clamp(3.5rem,9.5vw,9rem)] font-medium leading-[0.88] tracking-[-0.055em] text-white"
+            >
               I build modern websites for brands and businesses.
             </motion.h1>
 
-            <motion.div initial={shouldReduceMotion ? false : "hidden"} animate={reveal} variants={fadeUp} custom={0.3} className="mt-10 flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.3, ease: "easeOut" }}
+              className="mt-10 flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between"
+            >
               <p className="max-w-md text-base leading-7 text-zinc-400 sm:text-lg">
                 Thoughtful design, clean development, and responsive experiences built to help your business show up with confidence online.
               </p>
