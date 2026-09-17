@@ -8,31 +8,68 @@ const inputClassName =
 
 export function ProjectInquiryForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/inquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          project: formData.get("project"),
+          budget: formData.get("budget"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "We could not save your inquiry.");
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (submissionError) {
+      setError(
+        submissionError instanceof Error
+          ? submissionError.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (submitted) {
     return (
       <div className="border border-[var(--border)] p-8 sm:p-10">
         <p className="text-sm uppercase tracking-[0.16em] text-[var(--muted)]">
-          Inquiry form
+          Inquiry received
         </p>
         <h2 className="mt-4 font-[var(--font-display)] text-3xl font-medium tracking-[-0.035em] sm:text-4xl">
           Thanks for sharing the project.
         </h2>
         <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-          The inquiry experience is ready. Contact delivery will be connected in
-          the next integration step.
+          Your project details have been saved. I&apos;ll review the inquiry and
+          follow up using the email address you provided.
         </p>
         <button
           type="button"
           onClick={() => setSubmitted(false)}
           className="mt-8 text-sm underline underline-offset-4 transition-opacity hover:opacity-70"
         >
-          Edit inquiry
+          Send another inquiry
         </button>
       </div>
     );
@@ -84,11 +121,18 @@ export function ProjectInquiryForm() {
         <textarea id="message" name="message" required rows={5} placeholder="Tell me about the goal, audience, pages, or anything else that matters." className={`${inputClassName} resize-none`} />
       </div>
 
+      {error ? (
+        <p role="alert" className="text-sm leading-6 text-red-300">
+          {error}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="inline-flex items-center gap-3 border border-white bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-transparent hover:text-white"
+        disabled={isSubmitting}
+        className="inline-flex items-center gap-3 border border-white bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-transparent hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Submit inquiry
+        {isSubmitting ? "Saving inquiry..." : "Submit inquiry"}
         <ArrowUpRight size={16} aria-hidden="true" />
       </button>
     </form>
