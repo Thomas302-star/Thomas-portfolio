@@ -23,6 +23,22 @@ const projects = [
       "An educational landing experience that explains core exchange features through a clear, structured interface.",
     href: "/work/bitget-education",
   },
+  {
+    number: "04",
+    category: "Remote Jobs / SaaS",
+    title: "RemoteScout",
+    description:
+      "A platform for finding legitimate remote jobs from trusted sources in one place, with tools for discovering, saving, applying, and tracking opportunities.",
+    href: "/work/remotescout",
+  },
+  {
+    number: "05",
+    category: "Ministry / Organization",
+    title: "EMMANUEL MAKANJUOLA APOSTOLIC MISSIONS",
+    description:
+      "A modern ministry website built to present the mission, ministry focus, resources, and ways to connect through a clear digital experience.",
+    href: "/work/emmanuel-makanjuola-apostolic-missions",
+  },
 ];
 
 export default function WorkPage() {
