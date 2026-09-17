@@ -14,7 +14,7 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl items-center justify-between border border-white/10 bg-black/80 px-4 py-3 backdrop-blur-md sm:px-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between border border-white/10 bg-black/95 px-4 py-3 sm:px-5">
         <Link
           href="/"
           className="font-[var(--font-display)] text-sm font-medium uppercase tracking-[0.14em] transition-opacity hover:opacity-70"
