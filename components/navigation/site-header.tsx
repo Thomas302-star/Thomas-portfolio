@@ -25,17 +25,14 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-white/70 transition-colors hover:text-white"
-            >
+            <Link key={link.href} href={link.href} className="text-sm text-white/70 transition-colors hover:text-white">
               {link.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="inline-flex min-h-10 items-center justify-center whitespace-nowrap bg-white px-4 py-2 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="inline-flex min-h-10 items-center justify-center whitespace-nowrap bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            style={{ color: "#0A0A0A" }}
           >
             Start a Project
           </Link>
@@ -59,9 +56,7 @@ export function SiteHeader() {
 
         <div
           id="mobile-navigation"
-          className={`absolute inset-x-0 top-[calc(100%+0.5rem)] border border-white/10 bg-[#0a0a0a] p-5 transition-all duration-200 md:hidden ${
-            open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
-          }`}
+          className={`absolute inset-x-0 top-[calc(100%+0.5rem)] border border-white/10 bg-[#0a0a0a] p-5 transition-all duration-200 md:hidden ${open ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"}`}
         >
           <nav className="flex flex-col" aria-label="Mobile navigation">
             {links.map((link) => (
@@ -76,7 +71,8 @@ export function SiteHeader() {
             ))}
             <Link
               href="/contact"
-              className="mt-5 inline-flex min-h-12 items-center justify-center whitespace-nowrap bg-white px-5 py-3 text-center text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="mt-5 inline-flex min-h-12 items-center justify-center whitespace-nowrap bg-white px-5 py-3 text-center text-sm font-medium transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              style={{ color: "#0A0A0A" }}
               onClick={() => setOpen(false)}
             >
               Start a Project
