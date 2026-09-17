@@ -18,14 +18,14 @@ export function ProjectInquiryForm() {
     return (
       <div className="border border-[var(--border)] p-8 sm:p-10">
         <p className="text-sm uppercase tracking-[0.16em] text-[var(--muted)]">
-          Inquiry ready
+          Inquiry form
         </p>
         <h2 className="mt-4 font-[var(--font-display)] text-3xl font-medium tracking-[-0.035em] sm:text-4xl">
           Thanks for sharing the project.
         </h2>
         <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-          Your project details have been captured in this form. Contact delivery
-          will be connected in the next integration step.
+          The inquiry experience is ready. Contact delivery will be connected in
+          the next integration step.
         </p>
         <button
           type="button"
@@ -70,8 +70,8 @@ export function ProjectInquiryForm() {
             Select a range
           </option>
           <option value="under-500">Under $500</option>
-          <option value="500-1000">$500 – $1,000</option>
-          <option value="1000-2500">$1,000 – $2,500</option>
+          <option value="500-1000">$500 to $1,000</option>
+          <option value="1000-2500">$1,000 to $2,500</option>
           <option value="2500-plus">$2,500+</option>
           <option value="not-sure">Not sure yet</option>
         </select>
@@ -88,7 +88,7 @@ export function ProjectInquiryForm() {
         type="submit"
         className="inline-flex items-center gap-3 border border-white bg-white px-5 py-3 text-sm font-medium text-black transition-colors hover:bg-transparent hover:text-white"
       >
-        Send project inquiry
+        Submit inquiry
         <ArrowUpRight size={16} aria-hidden="true" />
       </button>
     </form>
