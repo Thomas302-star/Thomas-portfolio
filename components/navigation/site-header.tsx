@@ -17,7 +17,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between border border-white/10 bg-black/95 px-4 py-3 sm:px-5">
         <Link
           href="/"
-          className="font-[var(--font-display)] text-sm font-medium uppercase tracking-[0.14em] transition-opacity hover:opacity-70"
+          className="font-[var(--font-display)] text-sm font-medium uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-70"
           onClick={() => setOpen(false)}
         >
           Thomas Fatade
@@ -35,7 +35,7 @@ export function SiteHeader() {
           ))}
           <Link
             href="/contact"
-            className="bg-white px-4 py-2 text-sm font-medium text-black transition-transform hover:-translate-y-0.5"
+            className="inline-flex min-h-10 items-center justify-center whitespace-nowrap bg-white px-4 py-2 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             Start a Project
           </Link>
@@ -76,7 +76,7 @@ export function SiteHeader() {
             ))}
             <Link
               href="/contact"
-              className="mt-5 bg-white px-5 py-3 text-center text-sm font-medium text-black"
+              className="mt-5 inline-flex min-h-12 items-center justify-center whitespace-nowrap bg-white px-5 py-3 text-center text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               onClick={() => setOpen(false)}
             >
               Start a Project
