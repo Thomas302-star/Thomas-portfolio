@@ -45,11 +45,11 @@ export function HeroSection() {
               </p>
 
               <div className="flex shrink-0 flex-wrap gap-3">
-                <a href="/work" className="group inline-flex min-h-12 items-center justify-center gap-2 border border-white bg-white px-5 text-sm font-medium text-black transition-colors hover:bg-transparent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                <a href="/work" className="group inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap border border-white bg-white px-5 text-sm font-medium text-[#0A0A0A] transition-colors hover:bg-transparent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
                   View my work
                   <ArrowUpRight aria-hidden="true" size={17} strokeWidth={1.8} className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
-                <a href="/contact" className="inline-flex min-h-12 items-center justify-center border border-zinc-700 px-5 text-sm font-medium text-white transition-colors hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                <a href="/contact" className="inline-flex min-h-12 items-center justify-center whitespace-nowrap border border-zinc-700 px-5 text-sm font-medium text-white transition-colors hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
                   Start a project
                 </a>
               </div>
