@@ -21,6 +21,7 @@ export default function BitgetEducationPage() {
         { label: "Category", value: "Web3" },
         { label: "Focus", value: "Content clarity" },
       ]}
+      deliverables={["Information architecture", "Educational sections", "Responsive navigation", "Content presentation"]}
       nextProject={{ title: "RemoteScout", href: "/work/remotescout" }}
     />
   );
