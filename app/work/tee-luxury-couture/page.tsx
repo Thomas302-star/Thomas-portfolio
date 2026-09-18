@@ -21,6 +21,7 @@ export default function TeeLuxuryCouturePage() {
         { label: "Focus", value: "Visual presentation" },
         { label: "Experience", value: "Responsive web" },
       ]}
+      deliverables={["Website structure", "Responsive interface", "Brand presentation", "Navigation and page flow"]}
       nextProject={{ title: "Creator Content Planner", href: "/work/creator-content-planner" }}
     />
   );
