@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 
 type CaseStudyLayoutProps = {
@@ -14,9 +14,10 @@ type CaseStudyLayoutProps = {
   nextProject?: { title: string; href: string };
   children?: ReactNode;
   visual?: { eyebrow: string; title: string; accent: string };
+  liveUrl?: string;
 };
 
-export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual }: CaseStudyLayoutProps) {
+export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual, liveUrl }: CaseStudyLayoutProps) {
   return (
     <main className="bg-[var(--background)] text-white">
       <section className="px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
@@ -35,6 +36,20 @@ export function CaseStudyLayout({ category, title, intro, overview, focus, detai
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-7 max-w-3xl text-base leading-7 text-[var(--muted)] sm:text-lg sm:leading-8">{intro}</p>
+          </Reveal>
+          <Reveal delay={0.22}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {liveUrl && (
+                <a href={liveUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 bg-white px-5 text-sm font-medium text-black transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
+                  View live project
+                  <ExternalLink size={16} />
+                </a>
+              )}
+              <Link href="/contact" className="inline-flex min-h-11 items-center gap-2 border border-[var(--border)] px-5 text-sm font-medium text-white transition-colors hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
+                Start a project
+                <ArrowUpRight size={16} />
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
