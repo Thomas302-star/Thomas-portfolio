@@ -10,6 +10,7 @@ type CaseStudyLayoutProps = {
   overview: string[];
   focus: string[];
   details?: { label: string; value: string }[];
+  deliverables?: string[];
   nextProject?: { title: string; href: string };
   children?: ReactNode;
 };
@@ -52,7 +53,7 @@ export function CaseStudyLayout({ category, title, intro, overview, focus, detai
         </div>
       </section>
 
-      {details.length > 0 && (
+      {deliverables.length > 0 && (\n        <section className="border-b border-[var(--border)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">\n          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">\n            <Reveal><p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)] sm:text-sm">Deliverables</p></Reveal>\n            <div className="grid gap-4 sm:grid-cols-2">\n              {deliverables.map((item, index) => (\n                <Reveal key={item} delay={index * 0.04}>\n                  <div className="border-t border-[var(--border)] pt-5">\n                    <p className="font-[var(--font-display)] text-xl font-medium">{item}</p>\n                  </div>\n                </Reveal>\n              ))}\n            </div>\n          </div>\n        </section>\n      )}\n\n      {details.length > 0 && (
         <section className="px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
           <div className="mx-auto max-w-7xl">
             <Reveal><p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)] sm:text-sm">Project details</p></Reveal>
