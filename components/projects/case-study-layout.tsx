@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 
 type CaseStudyLayoutProps = {
@@ -14,7 +14,6 @@ type CaseStudyLayoutProps = {
   nextProject?: { title: string; href: string };
   children?: ReactNode;
   visual?: { eyebrow: string; title: string; accent: string };
-  liveUrl?: string;
 };
 
 export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual, liveUrl }: CaseStudyLayoutProps) {
@@ -39,20 +38,13 @@ export function CaseStudyLayout({ category, title, intro, overview, focus, detai
           </Reveal>
           <Reveal delay={0.22}>
             <div className="mt-8 flex flex-wrap gap-3">
-              {liveUrl && (
-                <a href={liveUrl} target="_blank" rel="noreferrer" style={{ color: "#0A0A0A", backgroundColor: "#FFFFFF" }} className="inline-flex min-h-11 items-center gap-2 px-5 text-sm font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
-                  View live project
-                  <ExternalLink size={16} />
-                </a>
-              )}
               <Link href="/contact" style={{ color: "#FFFFFF", borderColor: "#27272A" }} className="inline-flex min-h-11 items-center gap-2 border px-5 text-sm font-medium transition-colors hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
                 Start a project
                 <ArrowUpRight size={16} />
               </Link>
             </div>
           </Reveal>
-        </div>
-      </section>
+
 
       {visual && (
         <section className="px-5 pb-16 sm:px-8 lg:px-12 lg:pb-24">
