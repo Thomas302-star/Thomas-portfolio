@@ -30,8 +30,9 @@ export function SelectedWork() {
                       <h3 className="font-display text-2xl font-medium tracking-[-0.03em] text-white transition-colors duration-300 group-hover:text-blue-400 sm:text-3xl">{project.title}</h3>
                       <p className="mt-3 max-w-xl text-sm leading-6 text-zinc-400 sm:text-base">{project.description}</p>
                     </div>
-                    <a href={project.href} aria-label={`View ${project.title}`} className="inline-flex h-11 w-11 items-center justify-center border border-zinc-800 text-zinc-400 transition-all duration-300 group-hover:border-zinc-500 group-hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-                      <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.6} />
+                    <a href={project.href} aria-label={`View ${project.title} case study`} className="inline-flex min-h-11 items-center justify-center gap-2 border border-zinc-800 px-4 text-sm font-medium text-zinc-300 transition-all duration-300 group-hover:border-zinc-500 group-hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                      View project
+                      <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.6} />
                     </a>
                   </article>
                 </Reveal>
