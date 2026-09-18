@@ -21,6 +21,7 @@ export default function CreatorContentPlannerPage() {
         { label: "Audience", value: "Solo creators" },
         { label: "Core flow", value: "Ideas to calendar" },
       ]}
+      deliverables={["Product structure", "Creator workflow", "Idea management", "Calendar planning"]}
       nextProject={{ title: "Bitget Education", href: "/work/bitget-education" }}
     />
   );
