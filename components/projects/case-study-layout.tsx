@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import Image from "next/image";
 
 type CaseStudyLayoutProps = {
   category: string;
@@ -14,9 +15,10 @@ type CaseStudyLayoutProps = {
   nextProject?: { title: string; href: string };
   children?: ReactNode;
   visual?: { eyebrow: string; title: string; accent: string };
+  gallery?: { src: string; alt: string; caption?: string }[];
 };
 
-export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual }: CaseStudyLayoutProps) {
+export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual, gallery = [] }: CaseStudyLayoutProps) {
   return (
     <main className="bg-[var(--background)] text-white">
       <section className="px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
@@ -62,6 +64,26 @@ export function CaseStudyLayout({ category, title, intro, overview, focus, detai
                 </div>
               </div>
             </Reveal>
+          </div>
+        </section>
+      )}
+
+      {gallery.length > 0 && (
+        <section className="border-b border-[var(--border)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <Reveal><p className="text-xs uppercase tracking-[0.18em] text-[var(--muted)] sm:text-sm">Project screenshots</p></Reveal>
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              {gallery.map((image, index) => (
+                <Reveal key={image.src} delay={index * 0.05}>
+                  <figure className="overflow-hidden border border-[var(--border)] bg-zinc-950">
+                    <div className="relative aspect-[16/10] w-full">
+                      <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+                    </div>
+                    {image.caption && <figcaption className="border-t border-[var(--border)] px-5 py-4 text-sm text-[var(--muted)]">{image.caption}</figcaption>}
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
       )}
