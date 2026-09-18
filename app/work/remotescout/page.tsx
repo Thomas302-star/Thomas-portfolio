@@ -22,6 +22,7 @@ export default function RemoteScoutPage() {
         { label: "Core flow", value: "Discover to track" },
       ]}
       deliverables={["Product structure", "Job discovery flow", "Opportunity tracking", "Responsive experience"]}
+        visual={{ eyebrow: "Remote Jobs / SaaS", title: "A focused workflow for discovering and tracking opportunities.", accent: "#2563EB" }}
       nextProject={{ title: "EMMANUEL MAKANJUOLA APOSTOLIC MISSIONS", href: "/work/emmanuel-makanjuola-apostolic-missions" }}
     />
   );
