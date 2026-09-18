@@ -23,6 +23,7 @@ export default function TeeLuxuryCouturePage() {
       ]}
       deliverables={["Website structure", "Responsive interface", "Brand presentation", "Navigation and page flow"]}
         visual={{ eyebrow: "Fashion / E-commerce", title: "A polished digital storefront for a fashion brand.", accent: "#2563EB" }}
+      liveUrl="https://tee-luxury-couture.vercel.app"
       nextProject={{ title: "Creator Content Planner", href: "/work/creator-content-planner" }}
     />
   );
