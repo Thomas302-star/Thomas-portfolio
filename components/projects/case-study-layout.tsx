@@ -40,12 +40,12 @@ export function CaseStudyLayout({ category, title, intro, overview, focus, detai
           <Reveal delay={0.22}>
             <div className="mt-8 flex flex-wrap gap-3">
               {liveUrl && (
-                <a href={liveUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 bg-white px-5 text-sm font-medium text-black transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
+                <a href={liveUrl} target="_blank" rel="noreferrer" style={{ color: "#0A0A0A", backgroundColor: "#FFFFFF" }} className="inline-flex min-h-11 items-center gap-2 px-5 text-sm font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
                   View live project
                   <ExternalLink size={16} />
                 </a>
               )}
-              <Link href="/contact" className="inline-flex min-h-11 items-center gap-2 border border-[var(--border)] px-5 text-sm font-medium text-white transition-colors hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
+              <Link href="/contact" style={{ color: "#FFFFFF", borderColor: "#27272A" }} className="inline-flex min-h-11 items-center gap-2 border px-5 text-sm font-medium transition-colors hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]">
                 Start a project
                 <ArrowUpRight size={16} />
               </Link>
