@@ -16,7 +16,7 @@ type CaseStudyLayoutProps = {
   visual?: { eyebrow: string; title: string; accent: string };
 };
 
-export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual, liveUrl }: CaseStudyLayoutProps) {
+export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual }: CaseStudyLayoutProps) {
   return (
     <main className="bg-[var(--background)] text-white">
       <section className="px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
@@ -44,7 +44,8 @@ export function CaseStudyLayout({ category, title, intro, overview, focus, detai
               </Link>
             </div>
           </Reveal>
-
+        </div>
+      </section>
 
       {visual && (
         <section className="px-5 pb-16 sm:px-8 lg:px-12 lg:pb-24">
