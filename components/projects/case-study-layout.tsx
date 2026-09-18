@@ -13,9 +13,10 @@ type CaseStudyLayoutProps = {
   deliverables?: string[];
   nextProject?: { title: string; href: string };
   children?: ReactNode;
+  visual?: { eyebrow: string; title: string; accent: string };
 };
 
-export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children }: CaseStudyLayoutProps) {
+export function CaseStudyLayout({ category, title, intro, overview, focus, details = [], deliverables = [], nextProject, children, visual }: CaseStudyLayoutProps) {
   return (
     <main className="bg-[var(--background)] text-white">
       <section className="px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-12 lg:pb-28 lg:pt-44">
@@ -38,7 +39,24 @@ export function CaseStudyLayout({ category, title, intro, overview, focus, detai
         </div>
       </section>
 
-      {children}
+      {visual && (
+        <section className="px-5 pb-16 sm:px-8 lg:px-12 lg:pb-24">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-6 text-black sm:p-10 lg:p-14">
+                <div className="absolute -right-24 -top-24 size-72 rounded-full blur-3xl" style={{ backgroundColor: visual.accent, opacity: 0.22 }} />
+                <div className="relative grid min-h-[280px] items-end gap-10 sm:min-h-[360px] lg:grid-cols-[1fr_auto]">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-zinc-500">{visual.eyebrow}</p>
+                    <p className="mt-5 max-w-3xl font-[var(--font-display)] text-4xl font-semibold tracking-[-0.045em] sm:text-6xl lg:text-7xl">{visual.title}</p>
+                  </div>
+                  <div className="flex size-28 items-center justify-center rounded-full border border-black/10 bg-white/70 text-xs uppercase tracking-[0.14em] text-zinc-600 backdrop-blur-sm">Project<br />Visual</div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       <section className="border-y border-[var(--border)] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
