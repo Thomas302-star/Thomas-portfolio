@@ -21,6 +21,7 @@ export default function RemoteScoutPage() {
         { label: "Category", value: "Remote jobs" },
         { label: "Core flow", value: "Discover to track" },
       ]}
+      deliverables={["Product structure", "Job discovery flow", "Opportunity tracking", "Responsive experience"]}
       nextProject={{ title: "EMMANUEL MAKANJUOLA APOSTOLIC MISSIONS", href: "/work/emmanuel-makanjuola-apostolic-missions" }}
     />
   );
