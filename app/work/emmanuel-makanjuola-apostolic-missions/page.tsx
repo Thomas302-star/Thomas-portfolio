@@ -22,6 +22,7 @@ export default function EmmanuelMakanjuolaApostolicMissionsPage() {
         { label: "Experience", value: "Responsive web" },
       ]}
       deliverables={["Website structure", "Mission presentation", "Resource navigation", "Responsive experience"]}
+        visual={{ eyebrow: "Ministry / Organization", title: "A clear digital home for mission, resources, and connection.", accent: "#2563EB" }}
       nextProject={{ title: "Tee Luxury Couture", href: "/work/tee-luxury-couture" }}
     />
   );
