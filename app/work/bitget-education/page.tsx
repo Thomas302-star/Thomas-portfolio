@@ -22,6 +22,7 @@ export default function BitgetEducationPage() {
         { label: "Focus", value: "Content clarity" },
       ]}
       deliverables={["Information architecture", "Educational sections", "Responsive navigation", "Content presentation"]}
+        visual={{ eyebrow: "Web3 / Education", title: "Complex product topics, presented with clarity.", accent: "#2563EB" }}
       nextProject={{ title: "RemoteScout", href: "/work/remotescout" }}
     />
   );
