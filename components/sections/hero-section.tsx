@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
+import { m, useReducedMotion } from "motion/react";
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -16,25 +16,25 @@ export function HeroSection() {
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end lg:gap-16">
           <div className="max-w-5xl">
-            <motion.p
+            <m.p
               initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.05, ease: "easeOut" }}
               className="mb-7 text-xs font-medium uppercase tracking-[0.24em] text-zinc-400"
             >
               Web Developer · Thomas Fatade
-            </motion.p>
+            </m.p>
 
-            <motion.h1
+            <m.h1
               initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.15, ease: "easeOut" }}
               className="font-display text-[clamp(3.5rem,9.5vw,9rem)] font-medium leading-[0.88] tracking-[-0.055em] text-white"
             >
               I build modern websites for brands and businesses.
-            </motion.h1>
+            </m.h1>
 
-            <motion.div
+            <m.div
               initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: shouldReduceMotion ? 0 : 0.3, ease: "easeOut" }}
@@ -63,21 +63,21 @@ export function HeroSection() {
                   <span>Start a project</span>
                 </a>
               </div>
-            </motion.div>
+            </m.div>
           </div>
 
-          <motion.div initial={shouldReduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.55 }} className="hidden border-l border-white/10 pl-6 lg:block">
+          <m.div initial={shouldReduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: shouldReduceMotion ? 0 : 0.55 }} className="hidden border-l border-white/10 pl-6 lg:block">
             <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Based in Nigeria</p>
             <p className="mt-3 text-sm leading-6 text-zinc-400">
               Working with brands, founders, creators, and businesses to turn ideas into useful digital experiences.
             </p>
-          </motion.div>
+          </m.div>
         </div>
 
-        <motion.a href="#selected-work" initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : 0.8 }} className="mt-16 inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-white sm:mt-20">
+        <m.a href="#selected-work" initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: shouldReduceMotion ? 0 : 0.8 }} className="mt-16 inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-white sm:mt-20">
           Scroll to explore
           <ArrowDown aria-hidden="true" size={15} strokeWidth={1.5} />
-        </motion.a>
+        </m.a>
       </div>
     </section>
   );
