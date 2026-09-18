@@ -22,6 +22,7 @@ export default function CreatorContentPlannerPage() {
         { label: "Core flow", value: "Ideas to calendar" },
       ]}
       deliverables={["Product structure", "Creator workflow", "Idea management", "Calendar planning"]}
+        visual={{ eyebrow: "SaaS / Product", title: "From content ideas to a simple publishing plan.", accent: "#2563EB" }}
       nextProject={{ title: "Bitget Education", href: "/work/bitget-education" }}
     />
   );
