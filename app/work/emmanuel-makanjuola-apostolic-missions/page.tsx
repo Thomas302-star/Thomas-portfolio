@@ -21,6 +21,7 @@ export default function EmmanuelMakanjuolaApostolicMissionsPage() {
         { label: "Focus", value: "Mission and resources" },
         { label: "Experience", value: "Responsive web" },
       ]}
+      deliverables={["Website structure", "Mission presentation", "Resource navigation", "Responsive experience"]}
       nextProject={{ title: "Tee Luxury Couture", href: "/work/tee-luxury-couture" }}
     />
   );
