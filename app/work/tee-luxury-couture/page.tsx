@@ -22,6 +22,7 @@ export default function TeeLuxuryCouturePage() {
         { label: "Experience", value: "Responsive web" },
       ]}
       deliverables={["Website structure", "Responsive interface", "Brand presentation", "Navigation and page flow"]}
+        visual={{ eyebrow: "Fashion / E-commerce", title: "A polished digital storefront for a fashion brand.", accent: "#2563EB" }}
       nextProject={{ title: "Creator Content Planner", href: "/work/creator-content-planner" }}
     />
   );
